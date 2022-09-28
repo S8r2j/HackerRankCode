@@ -10,7 +10,7 @@ int main()
 	cin>>pg;
 	vector<int>range,revrange;
 	int num=1;
-	while(num<totalpg)
+	while(num<totalpg)											//creating range
 	{
 		range.push_back(num);
 		revrange.push_back(num);
@@ -19,26 +19,47 @@ int main()
 	if(num-2<totalpg && num>=totalpg)
 	{
 		range.push_back(num);
+		revrange.push_back(num);
 	}
-	copy(range.begin(),range.end(),revrange.begin());
+																//reversing range
 	reverse(revrange.begin(),revrange.end());
-	range.push_back(pg);
-	sort(range.begin(),range.end());
-	revrange.push_back(pg);
 	sort(revrange.begin(),revrange.end(), greater<int>());
+	
 	vector<int>::iterator i1;
 	vector<int>::iterator i2;
 	i1=find(range.begin(),range.end(),pg);
 	i2=find(revrange.begin(),revrange.end(),pg);
-	turn1=i1-range.begin();
-	turn2=i2-revrange.begin();
-	if(turn1<turn2)
+	if(i1!=range.end() || i2!=revrange.end())					//checking if the input page number is directly stored in range and calculating location
 	{
-		turn = turn1;
+		i1=find(range.begin(),range.end(),pg);
+		i2=find(revrange.begin(),revrange.end(),pg);
+		turn1=i1-range.begin();
+		cout<<turn1<<" ";
+		turn2=i2-revrange.begin();
+		cout<<turn2<<endl;
+		cout<<"Range: ";
+		for(int i=0;i<range.size();i++)
+		{
+			cout<<range[i]<<" ";
+		}
+		cout<<endl;
+		cout<<"REVRange: ";
+		for(int i=0;i<range.size();i++)
+		{
+			cout<<revrange[i]<<" ";
+		}
 	}
-	else if(turn2<turn1)
+	else if(i1==range.end() && i2==revrange.end())				//if input page number is not stored then calculating the location and turns needed
 	{
-		turn=turn2;
+		range.push_back(pg);
+		sort(range.begin(),range.end());
+		revrange.push_back(pg);
+		sort(revrange.begin(),revrange.end(), greater<int>());
+		i1=find(range.begin(),range.end(),pg);
+		i2=find(revrange.begin(),revrange.end(),pg);
+		turn1=i1-range.begin();
+		turn2=i2-revrange.begin()-1;
 	}
-	cout<<turn;
+		turn=min(turn1,turn2);
+		cout<<turn;
 }
