@@ -1,80 +1,44 @@
 //DRAWING BOOK
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 
 using namespace std;
 
 int main()
 {
-	int totalpg=0, pg=0,turn=0;
+	int totalpg=0, pg=0, turn=0,turn1=0,turn2=0;
 	cin>>totalpg;
 	cin>>pg;
-	vector<int> range;
+	vector<int>range,revrange;
 	int num=1;
-	while(num<=totalpg)
+	while(num<totalpg)
 	{
 		range.push_back(num);
-		num+=4;
+		revrange.push_back(num);
+		num+=2;
 	}
-	if(num>totalpg && (num-4)<totalpg)
+	if(num-2<totalpg && num>=totalpg)
 	{
 		range.push_back(num);
 	}
-	cout<<endl;
-	vector<int> rangerev(range.size());
-	reverse_copy(range.begin(),range.end(),rangerev.begin());
-	for(int i=0;i<range.size();i++)
+	copy(range.begin(),range.end(),revrange.begin());
+	reverse(revrange.begin(),revrange.end());
+	range.push_back(pg);
+	sort(range.begin(),range.end());
+	revrange.push_back(pg);
+	sort(revrange.begin(),revrange.end(), greater<int>());
+	vector<int>::iterator i1;
+	vector<int>::iterator i2;
+	i1=find(range.begin(),range.end(),pg);
+	i2=find(revrange.begin(),revrange.end(),pg);
+	turn1=i1-range.begin();
+	turn2=i2-revrange.begin();
+	if(turn1<turn2)
 	{
-		cout<<range[i]<<" ";
+		turn = turn1;
 	}
-	cout<<endl;
-	for(int i=0;i<range.size();i++)
+	else if(turn2<turn1)
 	{
-		cout<<rangerev[i]<<" ";
-	}
-	cout<<endl;
-	for(int i=0;i<range.size();i++)
-	{
-		if(pg<totalpg/2)
-		{
-			if(pg>range[i-1] && pg<range[i])
-			{
-				turn=i;
-				break;
-			}
-		}
-		else if(pg>totalpg/2)
-		{
-			if(pg<rangerev[i-1] && pg>rangerev[i+1])
-			{
-				turn=i;
-				break;
-			}
-		}
-		else
-		{
-			int turn1=0,turn2=0;
-			cout<<turn1<<" "<<turn2<<endl;
-			if(pg>range[i-1] && pg<range[i])
-			{
-				turn1=i;
-			}
-			if(pg<rangerev[i-1] && pg>rangerev[i+1])
-			{
-				turn2=i;
-			}
-			if(turn1>turn2)
-			{
-				turn=turn2;
-			}
-			else if(turn1<turn2){
-				turn=turn1;
-			}
-		}
-	}
-	if(pg==1 || pg==totalpg)
-	{
-		turn=0;
+		turn=turn2;
 	}
 	cout<<turn;
-	return 0;
 }
