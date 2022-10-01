@@ -13,5 +13,6 @@ int main()
 			cin>>s[i][j];
 		}
 	}
+	int magicConstant=15;
 	
 }
