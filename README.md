@@ -5,6 +5,7 @@
 ### [Picking Numbers Question](https://www.hackerrank.com/challenges/picking-numbers/problem)
 ### [Non Divisible Subset Question](https://www.hackerrank.com/challenges/non-divisible-subset/problem)
 ### [Climbing the Leaderboard Question](https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem)
+### [Repeated String Question](https://www.hackerrank.com/challenges/repeated-string/problem)
 ### Conversion of positive number less than 3999 into roman number
 ### Finding roots of given Quadratic equation
 ### [Forming Magic Square Question](https://www.hackerrank.com/challenges/magic-square-forming/problem)
