@@ -11,7 +11,7 @@ int main()
 	int res=0,res1=0,k=1;
 	cin>>w;
 	w1=w;
-	string str1;
+	string str1=w;
 	for(int i=w.size()-1;i>=0;i--)
 	{
 		for(int j=0;j<w.size();j++)
@@ -41,9 +41,18 @@ int main()
 						str1=w;
 					}
 				}
+				else{
+					w=w1;
+				}
 			}
 		}
 	}
+	if(str1[0]!=w1[0])
+	{
+		sort(str1.begin()+1,str1.end());	
+	}
+	if(str1==w1)
+		str1="no answer";
 	cout<<str1;
 	return 0;
 }
