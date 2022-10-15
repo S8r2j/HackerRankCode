@@ -6,6 +6,7 @@
 ### [Non Divisible Subset Question](https://www.hackerrank.com/challenges/non-divisible-subset/problem)
 ### [Climbing the Leaderboard Question](https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem)
 ### [Bigger Is Greater Question](https://www.hackerrank.com/challenges/bigger-is-greater/problem)
+### [Decrypt String](https://www.hackerrank.com/contests/code-breaker-bethem-challenge/challenges/decryption)
 ### [Repeated String Question](https://www.hackerrank.com/challenges/repeated-string/problem)
 ### Conversion of positive number less than 3999 into roman number
 ### Finding roots of given Quadratic equation
