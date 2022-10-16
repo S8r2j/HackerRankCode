@@ -5,51 +5,43 @@ using namespace std;
 
 int main()
 {
-	int p,q,digit;
-	string str;
+	int p,q,numdigit,sqdigit,lftprt,rtprt,k=0;
+	string str,lftstr,rtstr;
+	unsigned long int square;
 	cin>>p;
 	cin>>q;
-	long leftpart=0;
-	long rightpart=0;
-	long unsigned int square;
-	stringstream ss;
-	string num,right,left;
 	for(int i=p;i<=q;i++)
 	{
 		square=pow(i,2);
-		num=to_string(square);
-		cout<<"i = "<<i<<" and square of it = "<<num;
-		digit=int(log10(i)+1);
-		cout<<" with no of digits = "<<digit<<endl;
-		int k=num.size()-digit;
-		while(k<num.size())
+		numdigit=log10(i)+1;
+		sqdigit=log10(square)+1;
+		str=to_string(square);
+		for(int j=0;j<sqdigit;j++)
 		{
-			right+=num[k];
-			cout<<right<<" ";
-			k+=1;
-		}
-		if(num.size()!=0)
-		{
-			k=0;
-			while(k<digit)
+			if(j<(sqdigit-numdigit))
 			{
-				left+=num[k];
-			}	
+				lftstr+=str[j];
+			}
+			else
+				rtstr+=str[j];
 		}
+		stringstream ss(lftstr);
+		ss>>lftprt;
+		if(lftstr!="")
+			lftprt=stoi(lftstr);
 		else
-			leftpart=0;
-		cout<<num<<endl;
-		cout<<"left string = "<<left<<" and right string = "<<right<<endl;
-		ss<<right;
-		ss>>rightpart;
-		ss<<left;
-		ss>>leftpart;
-		right="";
-		left="";
-		if((leftpart+rightpart)==i)
+			lftprt=0;
+		stringstream sss(rtstr);
+		ss>>rtprt;
+		rtprt = stoi(rtstr);
+		if((lftprt+rtprt)==i)
 		{
-			cout<<i<<" "<<endl<<endl;
+			k=1;
+			cout<<i<<" ";
 		}
+		lftstr="";
+		rtstr="";
 	}
-	return 0;
+	if(k==0)
+		cout<<"INVALID RANGE";
 }
