@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <stack>
 
 using namespace std;
 
@@ -10,24 +9,22 @@ int main()
 	string path;
 	cin>>steps;
 	cin>>path;
-	stack<char>pq;
-	pq.push(path[0]);
+	vector<char>vect;
+	vect.push_back(path[0]);
 	for(int i=1;i<path.size();i++)
 	{
-		char ch=pq.top();
-		if(ch==path[i] || path.size()==0)
-		{
-			pq.push(path[i]);
-		}
-		else if(path[i-1]!=path[i])
-		{
-			cout<<"Popping out"<<endl;
-			cout<<pq.top()<<endl;
-			pq.pop();
-			if(pq.size()==0)
+		if(vect[i-1]==path[i] or vect.size()==0)
 			{
-				count+=1;
+				cout<<path[i]<<" ";
+				vect.push_back(path[i]);
+				cout<<vect[i]<<" ";
 			}
+		else{
+			char ch=vect[i-1];
+			cout<<ch<<endl;
+			vect.pop_back();
+			if(vect.size()==0 && ch=='D')
+				count+=1;
 		}
 	}
 	cout<<count;
