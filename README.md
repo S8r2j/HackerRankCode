@@ -1,15 +1,15 @@
 # HackerRankCode
-### [Drawing Book Question](https://www.hackerrank.com/challenges/drawing-book/problem)
-### [Finding Pair Question](https://www.hackerrank.com/challenges/sock-merchant)
-### [Finding Minimum Cost Question](https://practice.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/0)
-### [Picking Numbers Question](https://www.hackerrank.com/challenges/picking-numbers/problem)
-### [Non Divisible Subset Question](https://www.hackerrank.com/challenges/non-divisible-subset/problem)
-### [Climbing the Leaderboard Question](https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem)
-### [Bigger Is Greater Question](https://www.hackerrank.com/challenges/bigger-is-greater/problem)
-### [Decrypt String](https://www.hackerrank.com/contests/code-breaker-bethem-challenge/challenges/decryption)
-### [Kaprekar Number Question](https://www.hackerrank.com/challenges/kaprekar-numbers/problem)
-### [Repeated String Question](https://www.hackerrank.com/challenges/repeated-string/problem)
-### Conversion of positive number less than 3999 into roman number
-### Finding roots of given Quadratic equation
-### [Forming Magic Square Question](https://www.hackerrank.com/challenges/magic-square-forming/problem)
+### 1.  [Drawing Book Question](https://www.hackerrank.com/challenges/drawing-book/problem)
+### 2.  [Finding Pair Question](https://www.hackerrank.com/challenges/sock-merchant)
+### 3.  [Finding Minimum Cost Question](https://practice.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/0)
+### 4.  [Picking Numbers Question](https://www.hackerrank.com/challenges/picking-numbers/problem)
+### 5.  [Non Divisible Subset Question](https://www.hackerrank.com/challenges/non-divisible-subset/problem)
+### 6.  [Climbing the Leaderboard Question](https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem)
+### 7.  [Bigger Is Greater Question](https://www.hackerrank.com/challenges/bigger-is-greater/problem)
+### 8.  [Decrypt String](https://www.hackerrank.com/contests/code-breaker-bethem-challenge/challenges/decryption)
+### 9.  [Kaprekar Number Question](https://www.hackerrank.com/challenges/kaprekar-numbers/problem)
+### 10. [Repeated String Question](https://www.hackerrank.com/challenges/repeated-string/problem)
+### 11. Conversion of positive number less than 3999 into roman number
+### 12. Finding roots of given Quadratic equation
+### 13. [Forming Magic Square Question](https://www.hackerrank.com/challenges/magic-square-forming/problem)
 > I have considered there are already fixed number of square matrix that is considered as magic square matrix. And after specifying each matrix I compared the elements of the square magic matrix and the given square matrix
