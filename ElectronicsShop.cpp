@@ -28,7 +28,7 @@ int main()
 				{
 					sum=keyboards[i]+drives[j];
 					if(sum<=b)
-						maxprice=sum;
+						maxprice=max(sum,maxprice);
 				}
 			else if(keyboards[i]>=b)
 				break;
