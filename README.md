@@ -15,3 +15,5 @@
 > I have considered there are already fixed number of square matrix that is considered as magic square matrix. And after specifying each matrix I compared the elements of the square magic matrix and the given square matrix
 ### 14. [Electronics Shop Question](https://www.hackerrank.com/challenges/electronics-shop/problem)
 ### 15. [Cat And A Mouse Question](https://www.hackerrank.com/challenges/cats-and-a-mouse)
+### 16. Brainstorming Question
+>&nbsp; How many lights are on when triggered 257 times?
