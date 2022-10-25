@@ -13,6 +13,19 @@ int main()
 		cin>>str;
 		arr.push_back(str);
 	}
+	string temp;
+	for(int i=0;i<arr.size();i++)
+	{
+		for(int j=0;j<arr.size();j++)
+		{
+			if(arr[j].size()>arr[i].size())
+			{
+				temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=arr[i];
+			}
+		}
+	}
 	for(int i=0;i<arr.size();i++)
 	{
 		for(int j=0;j<arr.size();j++)
