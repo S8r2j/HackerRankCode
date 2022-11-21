@@ -12,83 +12,74 @@ struct ListNode{
 };
 
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode *head1=l1,*head2=l2;
-        ListNode *sum;
-        ListNode *head=sum;
-        int s=0,c=0,num1=0,num2=0;
-        while(l1!=nullptr || l2!=nullptr || c!=0)
+        ListNode *sum=new ListNode(-1,nullptr);
+        ListNode *prev=new ListNode();
+        ListNode *node=new ListNode();
+        int s=0,c=0;
+        while(l1!=nullptr||l2!=nullptr)
         {
-            num1=0;
-            num2=0;
-            if(l1)
-            {
-                num1=l1->val;
-                l1=l1->next;
-            }
-            if(l2)
-            {
-                num2=l2->val;
-                l2=l2->next;
-            }
-            s=num1+num2+c;
+            s=(l1?l1->val:0)+(l2?l2->val:0)+c;
             c=s/10;
-            s=s%10;
-            ListNode *node=new ListNode(s);
-            if(sum==nullptr)
-            {
+            if(s>9)
+            	s=s%10;
+            node=new ListNode(s);
+            if(sum->val==-1)
                 sum=node;
-            }
             else{
-                head->next=node;
-                head=head->next;
+                prev->next=node;
             }
+            prev=node;
+            if(l1)
+                l1=l1->next;
+            if(l2)
+                l2=l2->next;
+        }
+        cout<<endl;
+        if(c>0)
+        {
+            node->next=new ListNode(c);
         }
         return sum;
     }
     
 int main()
 {
-	ListNode *l1,*l2;
+	ListNode *l1=new ListNode(),*l2=new ListNode(),*temp=new ListNode(),*temp1=new ListNode();
 	int n,num;
 	cin>>n;
 	for(int i=0;i<n;i++)
 	{
 		cin>>num;
 		ListNode *node= new ListNode(num);
-		if(l1==nullptr)
+		if(l1->val==NULL)
+		{
 			l1=node;
+		}
 		else
 		{
-			ListNode *temp= l1;
-			while(temp->next!=nullptr)
-			{
-				temp=temp->next;
-			}
 			temp->next=node;
 		}
+		temp=node;
 	}
 	cin>>n;
 	for(int i=0;i<n;i++)
 	{
 		cin>>num;
 		ListNode *node= new ListNode(num);
-		if(l2==nullptr)
+		if(l2->val==NULL)
 			l2=node;
 		else
 		{
-			ListNode *temp= l2;
-			while(temp->next!=nullptr)
-			{
-				temp=temp->next;
-			}
-			temp->next=node;
+			temp1->next=node;
 		}
+		temp1=node;
 	}
 	ListNode *result=addTwoNumbers(l1,l2);
-	ListNode *temp=result;
-	while(temp->next!=nullptr)
+	ListNode *temp3=new ListNode();
+	temp3=result;
+	while(temp3!=nullptr)
 	{
-		cout<<temp->val<<endl;
-		temp=temp->next;
+		cout<<temp3->val<<" ";
+		temp3=temp3->next;
 	}
 }
