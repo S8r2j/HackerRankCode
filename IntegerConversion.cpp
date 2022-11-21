@@ -4,66 +4,88 @@ using namespace std;
 
 int main()
 {
-	string s;
+	string s,str;
 	cin>>s;
-        int integer=0,itr_i=0,itr_v=0,itr_x=0,itr_l=0,itr_c=0,itr_d=0,itr_m=0;
-        for(int i=s.length()-1;i>=0;i--)
-        {
-			if(s[i]=='I')
+	int numi=0,numv=0,numx=0,numl=0,numc=0,numd=0,numm=0;
+	s="-"+s;
+    for(int i=1;i<s.size();i++)
+    {
+    	if(s[i]=='I')
+    	{
+    		numi+=1;
+		}
+		else if(s[i]=='V')
+		{
+			if(s[i-1]=='I')
 			{
-				itr_i+=1;
+				numv=4;
+				numi=0;
 			}
-			else if(s[i]=='V')
+			else
 			{
-				itr_v=itr_i+5;
-				if(s[i-1]=='I')
-					{
-						i=i-1;
-						itr_v=4;
-					}
+				numv=5+numi;
+				numi=0;
 			}
-			else if(s[i]=='X')
+		}
+		else if(s[i]=='X')
+		{
+			if(s[i-1]=='I')
 			{
-				itr_x=itr_x+10;
-				if(s[i-1]=='I')
-					itr_i=9;
+				numi=9;
 			}
-			else if(s[i]=='L')
+			else
 			{
-				itr_l=itr_x+50;
-				if(s[i-1]=='X')
-				{
-					i=i-1;
-					itr_l=40;
-				}
+				numx+=10;
 			}
-			else if(s[i]=='C')
+		}
+		else if(s[i]=='L')
+		{
+			if(s[i-1]=='X')
 			{
-				itr_c+=100;
-				if(s[i-1]=='X')
-				{
-					i=i-1;
-					itr_l=90;
-				}
+				numl=40;
+				numx=0;
 			}
-			else if(s[i]=='D')
+			else
 			{
-				itr_d=itr_c+500;
-				if(s[i-1]=='C')
-					{
-						itr_d=400;
-						i=i-1;
-					}
+				numl=50+numx;
+				numx=0;
 			}
-			else if(s[i]=='M')
+		}
+		else if(s[i]=='C')
+		{
+			if(s[i-1]=='X')
 			{
-				itr_m=itr_m+1000;
-				if(s[i-1]=='C')
-				{
-					itr_d=900;
-				}
+				numl=90;
+				numx=0;
 			}
-        }
-        integer=itr_i+itr_v+itr_x+itr_l+itr_c+itr_d+itr_m;
-        cout<<integer;
+			else
+			{
+				numc+=100;
+			}
+		}
+		else if(s[i]=='D')
+		{
+			if(s[i-1]=='C')
+			{
+				numc=400;
+			}
+			else
+			{
+				numd=500+numc;
+				numc=0;
+			}
+		}
+		else if(s[i]=='M')
+		{
+			if(s[i-1]=='C')
+			{
+				numc=900;
+			}
+			else if(s[i-1]!='C')
+			{
+				numm+=1000;
+			}
+		}
+	}
+	cout<<numm+numd+numc+numl+numx+numv+numi;
 }
